@@ -44,6 +44,8 @@ float& Matrice::operator()(unsigned int lig, unsigned int col)
 	return this->tab[this->ncol * lig + col];
 }
 
+//Ce qu'on a fait ensemble s'arrête ici
+
 Matrice Matrice::operator+(Matrice summed) const
 {
 	if (this->ncol != summed.ncolonnes() || this->nlignes() != summed.nlignes()) {
