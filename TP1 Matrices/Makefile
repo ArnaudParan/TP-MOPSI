@@ -1,7 +1,7 @@
 .PHONY:clean,mrproper
 .SUFFIXES:
 
-CC =colorgcc
+CC =g++
 LIBRARIES +=cunit
 #LDFLAGS +=-I ./ -W -Wall $(shell pkg-config --libs $(LIBRARIES))
 #CFLAGS +=-I ./ -W -Wall $(shell pkg-config --cflags $(LIBRARIES))
@@ -10,7 +10,7 @@ EXEC =Matrices
 DEBUG =true
 OPTIMIZE =false
 HEADERS =$(shell (echo *.h*))
-OBJECTS =$(shell echo *.cpp | sed -r 's/\.cpp /.o /g')
+OBJECTS =$(shell echo *.cpp | sed -r 's/\.cpp/.o/g')
 
 
 ifeq ($(DEBUG),true)

@@ -6,22 +6,24 @@
 class Matrice {
 	private:
 	float* tab;
-	int nlig, ncol;
+	unsigned int nlig, ncol;
 	//nombre de copies, initialement, 1
-	int* compteur;
+	unsigned int* compteur;
 	public:
-	Matrice(int nlig, int ncol);
+	Matrice(unsigned int nlig, unsigned int ncol);
 	~Matrice();
 	Matrice(const Matrice& copied);
-	int nlignes() const {return nlig};
-	int ncolonnes() const {return ncol};
-	float operator()(int i, int j) const;
-	float& operator()(int i, int j);
+	unsigned int nlignes() const {return nlig;};
+	unsigned int ncolonnes() const {return ncol;};
+	float operator()(unsigned int lig, unsigned int col) const;
+	float& operator()(unsigned int lig, unsigned int col);
 	Matrice operator+(Matrice summed) const;
 	Matrice operator*(Matrice rightMat) const;
 	Matrice& operator=(Matrice copied);
+
+	static Matrice ident(unsigned int nlig, unsigned int ncol);
 };
 
-ostream& operator<<(ostream& outStream, Matrice matOut);
+std::ostream& operator<<(std::ostream& outStream, Matrice matOut);
 
 #endif
