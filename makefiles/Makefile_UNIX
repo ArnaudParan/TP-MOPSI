@@ -9,8 +9,8 @@ CFLAGS +=-I ./ -W -Wall $(shell pkg-config --cflags $(LIBRARIES))
 EXEC =Tries
 DEBUG =true
 OPTIMIZE =false
-HEADERS =$(shell (echo *.h))
-OBJECTS =$(shell echo *.c | sed -r 's/\.c /.o /g')
+HEADERS =$(shell (echo ./src/*.h))
+OBJECTS =$(shell echo ./src/*.c | sed -r 's/\.c /.o /g')
 
 
 ifeq ($(DEBUG),true)
