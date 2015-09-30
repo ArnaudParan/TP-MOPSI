@@ -4,7 +4,7 @@
 Matrice::Matrice(unsigned int nlig, unsigned int ncol)
 {
 	if (nlig < 1 || ncol < 1) {
-		//TODO throw exception
+		throw "Trop peu de lignes/colonnes dans la matrice";
 	}
 	this->nlig = nlig;
 	this->ncol = ncol;
@@ -49,7 +49,7 @@ float& Matrice::operator()(unsigned int lig, unsigned int col)
 Matrice Matrice::operator+(Matrice summed) const
 {
 	if (this->ncol != summed.ncolonnes() || this->nlignes() != summed.nlignes()) {
-		//TODO throw exception
+		throw "Matrices non sommables";
 	}
 
 	Matrice sum(this->nlignes(), this->ncolonnes());
@@ -62,7 +62,7 @@ Matrice Matrice::operator+(Matrice summed) const
 Matrice Matrice::operator*(Matrice rightMat) const
 {
 	if (this->ncolonnes() != rightMat.nlignes()) {
-		//TODO throw exception
+		throw "Matrices non multipliables";
 	}
 
 	Matrice prod(this->nlignes(), rightMat.ncolonnes());

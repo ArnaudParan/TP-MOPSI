@@ -1,4 +1,5 @@
 #include "matrice.hpp"
+#include <cstdlib>
 
 //shallow copy
 //copy and write
@@ -13,5 +14,6 @@ int main()
 		}
 	}
 
-	std::cout << test1 * test2 << std::endl
+	std::cout << test1 * test2 << std::endl;
+	return EXIT_SUCCESS;
 }
