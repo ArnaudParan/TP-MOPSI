@@ -1,16 +1,16 @@
 .PHONY:clean,mrproper
 .SUFFIXES:
 
-CC =colorgcc
-LIBRARIES +=cunit
+CC =g++
+LIBRARIES +=cppunit
 LDFLAGS +=-I ./ -W -Wall $(shell pkg-config --libs $(LIBRARIES))
 CFLAGS +=-I ./ -W -Wall $(shell pkg-config --cflags $(LIBRARIES))
  
-EXEC =Tries
+EXEC =TP
 DEBUG =true
 OPTIMIZE =false
-HEADERS =$(shell (echo ./src/*.h))
-OBJECTS =$(shell echo ./src/*.c | sed -r 's/\.c /.o /g')
+HEADERS =$(shell (echo ./src/*.hpp))
+OBJECTS =$(shell echo ./src/*.cpp | sed -r 's/\.cpp/.o/g')
 
 
 ifeq ($(DEBUG),true)
@@ -43,7 +43,7 @@ $(EXEC) : $(OBJECTS)
 
 main.o : $(HEADERS)
 
-%.o : %.c
+%.o : %.cpp
 	@echo -e '\033[1m\n--> Compilation de \033[0m\033[2m$@\033[0m'
 	$(CC) -c $< $(CFLAGS) -o $@
 
