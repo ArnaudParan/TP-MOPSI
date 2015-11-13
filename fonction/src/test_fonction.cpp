@@ -28,7 +28,7 @@ FonctionCarre::FonctionCarre(){}
 
 FonctionCarre::~FonctionCarre(){}
 
-double FonctionCarre::operator()(double antecedant)
+double FonctionCarre::operator()(double antecedant) const
 {
 	return antecedant * antecedant;
 }

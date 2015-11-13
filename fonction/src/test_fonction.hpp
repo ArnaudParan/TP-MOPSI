@@ -24,7 +24,7 @@ class FonctionCarre : public Fonction {
 	public:
 	FonctionCarre();
 	virtual ~FonctionCarre();
-	double operator()(double antecedant);
+	double operator()(double antecedant) const;
 	Fonction* derivee() const;
 	Fonction* integrale() const;
 };
