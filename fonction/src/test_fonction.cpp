@@ -16,33 +16,37 @@ void Test_Fonction::tearDown()
 
 void Test_Fonction::test_inverse()
 {
-	double image = 1.;
-	double antecedant_attendu = 1.;
+	double image = 2.;
 	double antecedant = (this->foncTest)->inverse(image);
-	double erreur = ABS(antecedant - antecedant_attendu);
+	double image_calculee = (*(this->foncTest))(antecedant);
+	double erreur = ABS(image_calculee - image);
 	double erreur_max = 1e-5;
 	CPPUNIT_ASSERT(erreur <= erreur_max);
 }
 
-FonctionCarre::FonctionCarre(){}
+void Test_Fonction::test_derivee()
+{
+	Fonction* derivee = this->foncTest->derivee();
+	double antecedant = 1.;
+	double image_attendue = 2.;
+	double image = (*derivee)(antecedant);
+	double erreur = ABS(image - image_attendue);
+	double erreur_max = 1e-5;
 
-FonctionCarre::~FonctionCarre(){}
+	CPPUNIT_ASSERT(erreur <= erreur_max);
+
+	delete derivee;
+}
+
+FonctionCarre::FonctionCarre()
+{
+}
+
+FonctionCarre::~FonctionCarre()
+{
+}
 
 double FonctionCarre::operator()(double antecedant) const
 {
 	return antecedant * antecedant;
-}
-
-Fonction* FonctionCarre::derivee() const
-{
-	//TODO pas encore implémenté
-	FonctionCarre *carre = new FonctionCarre();
-	return carre;
-}
-
-Fonction* FonctionCarre::integrale() const
-{
-	//TODO pas encore implémenté
-	FonctionCarre *carre = new FonctionCarre();
-	return carre;
 }

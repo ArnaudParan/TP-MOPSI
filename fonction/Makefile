@@ -82,3 +82,4 @@ clean :
 mrproper : clean
 	@echo -e '\033[1;31mNettoyage de $(EXEC)\033[0m'
 	rm -rf $(EXEC)
+	rm -rf $(TEST_EXE)

@@ -9,6 +9,7 @@
 class Polynome : public Fonction {
 	public:
 	Polynome(std::vector<double> coeffs);
+	Polynome(double* coeffs, unsigned int taille_tab);
 	virtual ~Polynome();
 	virtual double operator()(double antecedant) const;
 	virtual Polynome* derivee() const;

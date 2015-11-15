@@ -6,6 +6,11 @@ Polynome::Polynome(std::vector<double> coeffs)
 	this->coeffs = new std::vector<double>(coeffs);
 }
 
+Polynome::Polynome(double* coeffs, unsigned int taille_tab)
+{
+	this->coeffs = new std::vector<double>(coeffs, coeffs + taille_tab);
+}
+
 Polynome::~Polynome()
 {
 	delete this->coeffs;

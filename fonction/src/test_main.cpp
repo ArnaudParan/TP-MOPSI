@@ -9,9 +9,11 @@
 
 #include "test_fonction.hpp"
 #include "test_polynome.hpp"
+#include "test_trigo.hpp"
 
 CPPUNIT_TEST_SUITE_REGISTRATION(Test_Fonction);
 CPPUNIT_TEST_SUITE_REGISTRATION(Test_Polynome);
+CPPUNIT_TEST_SUITE_REGISTRATION(Test_Trigo);
 
 int main()
 {

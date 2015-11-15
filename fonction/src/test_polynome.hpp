@@ -11,7 +11,6 @@ class Test_Polynome : public CPPUNIT_NS::TestCase {
 	CPPUNIT_TEST_SUITE(Test_Polynome);
 	CPPUNIT_TEST(test_evaluation);
 	CPPUNIT_TEST(test_derive);
-	CPPUNIT_TEST(test_integrale);
 	CPPUNIT_TEST_SUITE_END();
 
 	public:
@@ -19,11 +18,9 @@ class Test_Polynome : public CPPUNIT_NS::TestCase {
 	void tearDown(); 
 	void test_evaluation();
 	void test_derive();
-	void test_integrale();
 
 	private:
 	Polynome *poly;
-	std::vector<double> *coeff;
 };
 
 #endif /* TEST_POLYNOME_HPP */
