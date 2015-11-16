@@ -59,6 +59,7 @@ test : $(OBJECTS) $(TEST_OBJ)
 	@echo -e '\033[0;32m  |    \033[0m\033[1mLDFLAGS ......... \033[0m\033[2m$(LDFLAGS)'
 	@echo -e '\033[0m'
 	@./$(TEST_EXE)
+	rm ./$(TEST_EXE)
 
 ./src/main.o : $(HEADERS)
 
@@ -81,3 +82,4 @@ clean :
 mrproper : clean
 	@echo -e '\033[1;31mNettoyage de $(EXEC)\033[0m'
 	rm -rf $(EXEC)
+	rm -rf $(TEST_EXE)

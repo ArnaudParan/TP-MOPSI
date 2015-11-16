@@ -59,7 +59,6 @@ test : $(OBJECTS) $(TEST_OBJ)
 	@echo -e '\033[0;32m  |    \033[0m\033[1mLDFLAGS ......... \033[0m\033[2m$(LDFLAGS)'
 	@echo -e '\033[0m'
 	@./$(TEST_EXE)
-	rm ./$(TEST_EXE)
 
 ./src/main.o : $(HEADERS)
 
